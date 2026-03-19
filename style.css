@@ -990,3 +990,16 @@ body {
 .not-loaded * {
   animation-play-state: paused !important;
 }
+.message {
+  position: fixed;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-align: center;
+  z-index: 999;
+  text-shadow: 0 0 10px rgba(255,255,255,0.5);
+}
