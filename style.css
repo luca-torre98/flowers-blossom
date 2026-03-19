@@ -1046,60 +1046,101 @@ body {
 .flower__grass {
   --c: #3f8f63 !important;
 }
-/* ===== SCRITTA AL CENTRO, PIÙ GRANDE ===== */
+/* ===== LAYOUT FINALE PULITO ===== */
+
+body {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  min-height: 100dvh;
+  background: #fffdf7 !important;
+  overflow: hidden;
+  perspective: 1000px;
+}
+
+/* Sfondo chiaro */
+.night {
+  position: fixed !important;
+  left: 0 !important;
+  top: 0 !important;
+  transform: none !important;
+  width: 100% !important;
+  height: 100% !important;
+  filter: none !important;
+  background:
+    radial-gradient(circle at 50% 60%, rgba(255, 219, 92, 0.16) 0%, rgba(255, 219, 92, 0) 26%),
+    linear-gradient(to bottom, #ffffff 0%, #fffdf7 58%, #f5efdf 100%) !important;
+}
+
+/* Mazzo più visibile e centrato */
+.flowers {
+  position: fixed !important;
+  left: 50% !important;
+  bottom: 4vh !important;
+  transform: translateX(-50%) scale(0.92) !important;
+  transform-origin: bottom center !important;
+}
+
+/* Scritta al centro, più vicina ai fiori */
 .message {
   position: fixed !important;
-  top: 34% !important;
   left: 50% !important;
+  top: 44% !important;
   transform: translate(-50%, -50%) !important;
-  width: 82vw !important;
-  max-width: 900px !important;
+  width: min(86vw, 760px) !important;
   text-align: center !important;
-  font-size: 2.2rem !important;
-  line-height: 1.25 !important;
-  letter-spacing: 0.5px !important;
-  color: #4f4f4f !important;
-  text-shadow: 0 2px 10px rgba(255, 255, 255, 0.85) !important;
+  font-size: 2.15rem !important;
+  line-height: 1.22 !important;
+  letter-spacing: 0.3px !important;
+  color: #5a5a5a !important;
+  text-shadow: 0 2px 10px rgba(255, 255, 255, 0.9) !important;
   z-index: 999 !important;
+  padding: 0 10px !important;
 }
 
-/* ===== SU TELEFONO ANCORA PIÙ EQUILIBRATA ===== */
-@media (max-width: 768px) {
-  .message {
-    top: 30% !important;
-    width: 86vw !important;
-    font-size: 1.9rem !important;
-    line-height: 1.22 !important;
-    padding: 0 8px !important;
-  }
-}
-
-/* ===== RIMUOVE LE SFUMATURE NERE SOTTO LE FOGLIE ===== */
+/* Tolgo le ombre nere sotto le foglie */
 .flower__grass__overlay {
   display: none !important;
 }
 
 .flower__g-front__leaf {
-  box-shadow: inset 0 2px 1vmin rgba(160, 210, 175, 0.18) !important;
-  background-image: linear-gradient(to bottom right, #5c9b6b 50%, transparent 50%, transparent) !important;
-  -webkit-mask-image: linear-gradient(to bottom right, #5c9b6b 50%, transparent 50%, transparent) !important;
-  mask-image: linear-gradient(to bottom right, #5c9b6b 50%, transparent 50%, transparent) !important;
+  box-shadow: inset 0 2px 1vmin rgba(170, 210, 180, 0.18) !important;
+  background-image: linear-gradient(to bottom right, #6cab78 50%, transparent 50%, transparent) !important;
+  -webkit-mask-image: linear-gradient(to bottom right, #6cab78 50%, transparent 50%, transparent) !important;
+  mask-image: linear-gradient(to bottom right, #6cab78 50%, transparent 50%, transparent) !important;
 }
 
 .flower__g-fr__leaf {
-  box-shadow: inset 0 2px 1vmin rgba(160, 210, 175, 0.18) !important;
-  background-image: linear-gradient(to bottom right, #5c9b6b 45%, transparent 50%, transparent) !important;
-  -webkit-mask-image: linear-gradient(135deg, #4d8a5f 40%, transparent 50%, transparent) !important;
-  mask-image: linear-gradient(135deg, #4d8a5f 40%, transparent 50%, transparent) !important;
+  box-shadow: inset 0 2px 1vmin rgba(170, 210, 180, 0.18) !important;
+  background-image: linear-gradient(to bottom right, #6cab78 45%, transparent 50%, transparent) !important;
+  -webkit-mask-image: linear-gradient(135deg, #5a9b69 40%, transparent 50%, transparent) !important;
+  mask-image: linear-gradient(135deg, #5a9b69 40%, transparent 50%, transparent) !important;
 }
 
 .flower__g-right .leaf {
+  border-left: 2vmin solid #5a9b69 !important;
   background-image: none !important;
-  border-left: 2vmin solid #4d8a5f !important;
-  -webkit-mask-image: linear-gradient(to top, transparent 30%, #4d8a5f 60%) !important;
+  -webkit-mask-image: linear-gradient(to top, transparent 30%, #5a9b69 60%) !important;
 }
 
 .flower__g-fr .leaf {
-  border-left: 2vmin solid #4d8a5f !important;
-  -webkit-mask-image: linear-gradient(to top, transparent 25%, #4d8a5f 50%) !important;
+  border-left: 2vmin solid #5a9b69 !important;
+  -webkit-mask-image: linear-gradient(to top, transparent 25%, #5a9b69 50%) !important;
 }
+
+/* Mobile */
+@media (max-width: 768px) {
+  .flowers {
+    bottom: 3vh !important;
+    transform: translateX(-50%) scale(0.82) !important;
+  }
+
+  .message {
+    top: 42% !important;
+    width: 84vw !important;
+    font-size: 1.55rem !important;
+    line-height: 1.2 !important;
+    padding: 0 6px !important;
+  }
+}
+
