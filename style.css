@@ -14,7 +14,7 @@ body {
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  min-height: 100vh;
+  min-height: 100dvh;
   background-color: var(--dark-color);
   overflow: hidden;
   perspective: 1000px;
@@ -992,16 +992,19 @@ body {
 }
 .message {
   position: fixed;
-  top: 40px;
+  top: 32px;
   left: 50%;
   transform: translateX(-50%);
+  width: min(90vw, 900px);
   color: white;
   font-size: 2rem;
+  line-height: 1.2;
   font-weight: bold;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   text-align: center;
   z-index: 999;
   text-shadow: 0 0 10px rgba(255,255,255,0.5);
+  padding: 0 10px;
 }
 /* Verde arbusti centrali */
 .flower__line__leaf {
@@ -1042,4 +1045,19 @@ body {
 
 .flower__grass {
   --c: #3f8f63 !important;
+}
+@media (max-width: 768px) {
+  .flowers {
+    transform: scale(1.02);
+    margin-bottom: 12vh;
+  }
+
+  .message {
+    top: 24px;
+    width: 88vw;
+    font-size: 1.55rem;
+    line-height: 1.25;
+    letter-spacing: 0.5px;
+    padding: 0 8px;
+  }
 }
