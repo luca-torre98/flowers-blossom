@@ -1046,18 +1046,37 @@ body {
 .flower__grass {
   --c: #3f8f63 !important;
 }
+/* ===== TESTO PIÙ BASSO SU TELEFONO ===== */
 @media (max-width: 768px) {
-  .flowers {
-    transform: scale(1.02);
-    margin-bottom: 12vh;
-  }
-
   .message {
-    top: 24px;
-    width: 88vw;
-    font-size: 1.55rem;
+    top: 18vh !important;
+    width: 84vw;
+    font-size: 1.45rem;
     line-height: 1.25;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.4px;
     padding: 0 8px;
   }
+}
+
+/* ===== SFONDO CHIARO / BIANCO ===== */
+body {
+  background-color: #fdfbf4 !important;
+}
+
+.night {
+  left: 0 !important;
+  top: 0 !important;
+  transform: none !important;
+  width: 100% !important;
+  height: 100% !important;
+  filter: none !important;
+  background-image:
+    radial-gradient(circle at 50% 35%, rgba(255, 220, 120, 0.22), transparent 20%),
+    linear-gradient(to bottom, #ffffff 0%, #fdfbf4 55%, #f7f1e3 100%) !important;
+}
+
+/* ===== TESTO ADATTO A SFONDO CHIARO ===== */
+.message {
+  color: #5d5d5d !important;
+  text-shadow: 0 2px 10px rgba(255, 255, 255, 0.8) !important;
 }
